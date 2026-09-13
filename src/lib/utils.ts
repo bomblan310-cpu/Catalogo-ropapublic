@@ -29,5 +29,5 @@ export const getImageUrl = (imageName: string): string => {
   if (imageName.startsWith('http')) {
     return imageName;
   }
-  return `${process.env.NEXT_PUBLIC_API_URL}/images/${imageName}`;
+  return `/images/${imageName}`;
 };
