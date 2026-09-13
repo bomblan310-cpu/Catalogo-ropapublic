@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,400;1,500&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root { --ink: #202225; --paper: #f7f3ec; }
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; overflow-x: hidden; background: var(--paper); color: var(--ink); font-family: 'DM Sans', Arial, sans-serif; }
+.font-display { font-family: 'Playfair Display', Georgia, serif; }
+.font-tech { font-family: 'DM Mono', monospace; }
+::selection { background: #e9a38b; color: #202225; }
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: #f7f3ec; }
+::-webkit-scrollbar-thumb { background: #202225; }
+
+/* Monochrome fractured-hive art direction */
+.hive-noise { background-color: #e8e8e5; background-image: radial-gradient(circle at 78% 18%, rgba(0,0,0,.28) 0 1px, transparent 1.5px), radial-gradient(circle at 70% 78%, rgba(0,0,0,.18) 0 1px, transparent 1.5px), linear-gradient(30deg, rgba(0,0,0,.07) 12%, transparent 12.5%, transparent 87%, rgba(0,0,0,.07) 87.5%, rgba(0,0,0,.07)), linear-gradient(150deg, rgba(0,0,0,.07) 12%, transparent 12.5%, transparent 87%, rgba(0,0,0,.07) 87.5%, rgba(0,0,0,.07)); background-size: 17px 17px, 23px 23px, 46px 80px, 46px 80px; }
+.hex { clip-path: polygon(25% 6.7%,75% 6.7%,100% 50%,75% 93.3%,25% 93.3%,0 50%); }
+.hex-line { clip-path: polygon(25% 6.7%,75% 6.7%,100% 50%,75% 93.3%,25% 93.3%,0 50%); background: #131313; padding: 2px; }
+.hex-line > div { height: 100%; width: 100%; clip-path: inherit; }
+
+.crimson-grid { background-color: #0d0e12; background-image: linear-gradient(rgba(255,255,255,.045) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.045) 1px, transparent 1px); background-size: 48px 48px; }
+.glow-orb { background: radial-gradient(circle, rgba(255,55,86,.72) 0%, rgba(255,55,86,.15) 35%, transparent 70%); filter: blur(8px); }
+.clip-panel { clip-path: polygon(0 0, 92% 0, 100% 12%, 100% 100%, 8% 100%, 0 88%); }

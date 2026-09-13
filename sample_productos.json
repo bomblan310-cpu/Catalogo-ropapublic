@@ -1,0 +1,37 @@
+[
+  {
+    "nombre": "Camiseta Básica Negra",
+    "descripcion": "Camiseta de algodón 100% con acabado premium",
+    "precio": 29.99,
+    "stock": 150,
+    "talla": "XS, S, M, L, XL, XXL"
+  },
+  {
+    "nombre": "Pantalón Jeans Slim",
+    "descripcion": "Jeans azul oscuro con corte slim fit",
+    "precio": 59.99,
+    "stock": 80,
+    "talla": "28, 30, 32, 34, 36, 38, 40"
+  },
+  {
+    "nombre": "Chaqueta Denim",
+    "descripcion": "Clásica chaqueta de denim azul",
+    "precio": 79.99,
+    "stock": 45,
+    "talla": "XS, S, M, L, XL"
+  },
+  {
+    "nombre": "Sudadera Hoodie Gris",
+    "descripcion": "Cómoda sudadera con capucha",
+    "precio": 49.99,
+    "stock": 120,
+    "talla": "XS, S, M, L, XL, XXL"
+  },
+  {
+    "nombre": "Shorts Deportivos",
+    "descripcion": "Shorts perfectos para entrenar",
+    "precio": 34.99,
+    "stock": 200,
+    "talla": "XS, S, M, L, XL"
+  }
+]

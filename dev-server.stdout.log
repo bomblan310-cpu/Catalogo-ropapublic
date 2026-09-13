@@ -1,0 +1,25 @@
+
+> catalogo-ropa@1.0.0 dev
+> next dev
+
+   ▲ Next.js 14.0.4
+   - Local:        http://localhost:3000
+   - Environments: .env.local
+
+ ✓ Ready in 2.2s
+ ○ Compiling /admin ...
+ ✓ Compiled /admin in 1812ms (425 modules)
+ ✓ Compiled in 303ms (219 modules)
+ ✓ Compiled /api/admin/productos in 489ms (301 modules)
+prisma:query SELECT `main`.`productos`.`id`, `main`.`productos`.`nombre`, `main`.`productos`.`descripcion`, `main`.`productos`.`precio`, `main`.`productos`.`imagen`, `main`.`productos`.`talla`, `main`.`productos`.`stock`, `main`.`productos`.`inventarioTalles`, `main`.`productos`.`activo`, `main`.`productos`.`createdAt`, `main`.`productos`.`updatedAt` FROM `main`.`productos` WHERE 1=1 ORDER BY `main`.`productos`.`createdAt` DESC LIMIT ? OFFSET ?
+prisma:query SELECT `main`.`productos`.`id`, `main`.`productos`.`nombre`, `main`.`productos`.`descripcion`, `main`.`productos`.`precio`, `main`.`productos`.`imagen`, `main`.`productos`.`talla`, `main`.`productos`.`stock`, `main`.`productos`.`inventarioTalles`, `main`.`productos`.`activo`, `main`.`productos`.`createdAt`, `main`.`productos`.`updatedAt` FROM `main`.`productos` WHERE 1=1 ORDER BY `main`.`productos`.`createdAt` DESC LIMIT ? OFFSET ?
+ ✓ Compiled /api/admin/logout in 51ms (303 modules)
+ ✓ Compiled /admin-login in 355ms (517 modules)
+ ✓ Compiled /api/admin/login in 61ms (313 modules)
+prisma:query SELECT `main`.`admins`.`id`, `main`.`admins`.`email`, `main`.`admins`.`password`, `main`.`admins`.`nombre`, `main`.`admins`.`createdAt`, `main`.`admins`.`updatedAt` FROM `main`.`admins` WHERE (`main`.`admins`.`email` = ? AND 1=1) LIMIT ? OFFSET ?
+prisma:query SELECT `main`.`productos`.`id`, `main`.`productos`.`nombre`, `main`.`productos`.`descripcion`, `main`.`productos`.`precio`, `main`.`productos`.`imagen`, `main`.`productos`.`talla`, `main`.`productos`.`stock`, `main`.`productos`.`inventarioTalles`, `main`.`productos`.`activo`, `main`.`productos`.`createdAt`, `main`.`productos`.`updatedAt` FROM `main`.`productos` WHERE 1=1 ORDER BY `main`.`productos`.`createdAt` DESC LIMIT ? OFFSET ?
+prisma:query SELECT `main`.`productos`.`id`, `main`.`productos`.`nombre`, `main`.`productos`.`descripcion`, `main`.`productos`.`precio`, `main`.`productos`.`imagen`, `main`.`productos`.`talla`, `main`.`productos`.`stock`, `main`.`productos`.`inventarioTalles`, `main`.`productos`.`activo`, `main`.`productos`.`createdAt`, `main`.`productos`.`updatedAt` FROM `main`.`productos` WHERE 1=1 ORDER BY `main`.`productos`.`createdAt` DESC LIMIT ? OFFSET ?
+prisma:query SELECT 1
+prisma:query SELECT `main`.`admins`.`id`, `main`.`admins`.`email`, `main`.`admins`.`password`, `main`.`admins`.`nombre`, `main`.`admins`.`createdAt`, `main`.`admins`.`updatedAt` FROM `main`.`admins` WHERE (`main`.`admins`.`email` = ? AND 1=1) LIMIT ? OFFSET ?
+prisma:query SELECT `main`.`productos`.`id`, `main`.`productos`.`nombre`, `main`.`productos`.`descripcion`, `main`.`productos`.`precio`, `main`.`productos`.`imagen`, `main`.`productos`.`talla`, `main`.`productos`.`stock`, `main`.`productos`.`inventarioTalles`, `main`.`productos`.`activo`, `main`.`productos`.`createdAt`, `main`.`productos`.`updatedAt` FROM `main`.`productos` WHERE 1=1 ORDER BY `main`.`productos`.`createdAt` DESC LIMIT ? OFFSET ?
+prisma:query SELECT `main`.`productos`.`id`, `main`.`productos`.`nombre`, `main`.`productos`.`descripcion`, `main`.`productos`.`precio`, `main`.`productos`.`imagen`, `main`.`productos`.`talla`, `main`.`productos`.`stock`, `main`.`productos`.`inventarioTalles`, `main`.`productos`.`activo`, `main`.`productos`.`createdAt`, `main`.`productos`.`updatedAt` FROM `main`.`productos` WHERE 1=1 ORDER BY `main`.`productos`.`createdAt` DESC LIMIT ? OFFSET ?

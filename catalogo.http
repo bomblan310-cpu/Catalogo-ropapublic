@@ -1,0 +1,41 @@
+### Obtener todos los productos
+GET http://localhost:3000/api/productos
+
+### Obtener un producto específico
+GET http://localhost:3000/api/productos/1
+
+### Crear un nuevo producto
+POST http://localhost:3000/api/productos
+Content-Type: application/json
+
+{
+  "nombre": "Camiseta Premium",
+  "descripcion": "Camiseta de algodón premium con acabados de calidad",
+  "precio": 39.99,
+  "stock": 100,
+  "talla": "XS, S, M, L, XL, XXL"
+}
+
+### Crear otro producto
+POST http://localhost:3000/api/productos
+Content-Type: application/json
+
+{
+  "nombre": "Sudadera Hoodie",
+  "descripcion": "Sudadera cómoda con capucha",
+  "precio": 59.99,
+  "stock": 50,
+  "talla": "S, M, L, XL"
+}
+
+### Crear zapatillas
+POST http://localhost:3000/api/productos
+Content-Type: application/json
+
+{
+  "nombre": "Zapatillas Deportivas",
+  "descripcion": "Zapatillas cómodas para correr y entrenar",
+  "precio": 89.99,
+  "stock": 75,
+  "talla": "35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45"
+}

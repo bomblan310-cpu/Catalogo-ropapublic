@@ -1,0 +1,113 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Admin {
+  id        Int     @id @default(autoincrement())
+  email     String  @unique
+  password  String
+  nombre    String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("admins")
+}
+
+model Producto {
+  id          Int     @id @default(autoincrement())
+  nombre      String  @unique
+  descripcion String
+  precio      Float
+  imagen      String?
+  talla       String  @default("[]") // JSON array como string
+  stock       Int     @default(0)
+  inventarioTalles String @default("{}") // JSON: {"S": 3, "M": 8}
+  activo      Boolean @default(true)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  // Relaciones
+  carritoItems CarritoItem[]
+  pedidoItems  PedidoItem[]
+
+  @@map("productos")
+}
+
+model Usuario {
+  id        Int     @id @default(autoincrement())
+  email     String  @unique
+  nombre    String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  // Relaciones
+  pedidos Pedido[]
+  carrito Carrito[]
+
+  @@map("usuarios")
+}
+
+model Carrito {
+  id        Int     @id @default(autoincrement())
+  usuarioId Int
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  // Relaciones
+  usuario Usuario @relation(fields: [usuarioId], references: [id], onDelete: Cascade)
+  items   CarritoItem[]
+
+  @@map("carritos")
+}
+
+model CarritoItem {
+  id       Int @id @default(autoincrement())
+  carritoId Int
+  productoId Int
+  cantidad Int
+  talla    String
+
+  // Relaciones
+  carrito Carrito @relation(fields: [carritoId], references: [id], onDelete: Cascade)
+  producto Producto @relation(fields: [productoId], references: [id], onDelete: Cascade)
+
+  @@map("carrito_items")
+}
+
+model Pedido {
+  id       Int     @id @default(autoincrement())
+  usuarioId Int
+  total    Float
+  estado   String  @default("pendiente") // pendiente, procesando, enviado, entregado
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  // Relaciones
+  usuario Usuario @relation(fields: [usuarioId], references: [id], onDelete: Cascade)
+  items   PedidoItem[]
+
+  @@map("pedidos")
+}
+
+model PedidoItem {
+  id        Int @id @default(autoincrement())
+  pedidoId  Int
+  productoId Int
+  cantidad  Int
+  talla     String
+  precio    Float
+
+  // Relaciones
+  pedido Pedido @relation(fields: [pedidoId], references: [id], onDelete: Cascade)
+  producto Producto @relation(fields: [productoId], references: [id], onDelete: Cascade)
+
+  @@map("pedido_items")
+}
