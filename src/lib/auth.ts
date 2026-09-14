@@ -2,6 +2,8 @@ import jwt from 'jsonwebtoken';
 import { cookies } from 'next/headers';
 
 export async function verifyAuth() {
+  const secret = process.env.JWT_SECRET;
+  if (!secret) throw new Error('JWT_SECRET no está configurado');
   const cookieStore = await cookies();
   const token = cookieStore.get('admin_token')?.value;
 
@@ -10,7 +12,7 @@ export async function verifyAuth() {
   }
 
   try {
-    const decoded = jwt.verify(token, process.env.JWT_SECRET || 'secret');
+    const decoded = jwt.verify(token, secret);
     return decoded;
   } catch {
     throw new Error('Token inválido');
@@ -18,7 +20,9 @@ export async function verifyAuth() {
 }
 
 export function generateToken(adminId: number) {
-  return jwt.sign({ adminId }, process.env.JWT_SECRET || 'secret', {
+  const secret = process.env.JWT_SECRET;
+  if (!secret) throw new Error('JWT_SECRET no está configurado');
+  return jwt.sign({ adminId }, secret, {
     expiresIn: '7d',
   });
 }

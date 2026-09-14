@@ -5,12 +5,13 @@ import { verifyAuth } from '@/lib/auth';
 // GET: Obtener todos los productos
 export async function GET() {
   try {
+    await verifyAuth();
     const productos = await prisma.producto.findMany({
       orderBy: { createdAt: 'desc' },
     });
     return Response.json(productos);
   } catch (error) {
-    return Response.json({ error: String(error) }, { status: 500 });
+    return Response.json({ error: 'No autorizado' }, { status: 401 });
   }
 }
 
