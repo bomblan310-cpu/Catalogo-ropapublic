@@ -3,12 +3,14 @@
 export interface Producto {
   id: number;
   nombre: string;
+  categoria?: string;
   descripcion: string;
   precio: number;
   imagen: string;
   talla: string;
   stock: number;
   inventarioTalles?: string;
+  destacado?: boolean;
   createdAt?: Date;
   updatedAt?: Date;
 }

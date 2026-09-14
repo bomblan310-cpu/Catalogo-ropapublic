@@ -1,14 +1,61 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,400;1,500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700&family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,400;1,500&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: 'Knock Knock';
+  src: url('/fonts/KnockKnock.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root { --ink: #202225; --paper: #f7f3ec; }
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
-body { margin: 0; overflow-x: hidden; background: var(--paper); color: var(--ink); font-family: 'DM Sans', Arial, sans-serif; }
+body { margin: 0; overflow-x: hidden; background: var(--paper); color: var(--ink); font-family: 'Knock Knock', Arial, sans-serif; font-synthesis: none; }
+body * { font-family: 'Knock Knock', Arial, sans-serif !important; font-style: normal !important; font-weight: 400 !important; letter-spacing: .012em !important; font-synthesis: none; }
+body.admin-ui, body.admin-ui * { font-family: 'Barlow Condensed', 'DM Sans', sans-serif !important; font-style: normal !important; letter-spacing: .025em !important; }
+.font-price {
+  font-family: 'DM Mono', monospace !important;
+  font-weight: 500 !important;
+  letter-spacing: 0 !important;
+  font-style: normal !important;
+}
+
+/* Knock Knock necesita más tamaño que una fuente normal para mantener legibilidad. */
+.text-\[9px\] { font-size: 12px !important; letter-spacing: .05em !important; }
+.text-\[10px\] { font-size: 14px !important; letter-spacing: .04em !important; }
+.crimson-grid p.mt-8 { font-size: 18px !important; line-height: 1.8 !important; letter-spacing: .02em !important; }
+
+/* Barra de beneficios: texto más fácil de leer con Knock Knock. */
+main > section.border-y { padding-top: 1.35rem !important; padding-bottom: 1.35rem !important; }
+main > section.border-y > div { gap: 1.5rem 3rem !important; font-size: 16px !important; letter-spacing: .035em !important; }
+main > section.border-y > div > span { display: inline-flex; align-items: center; white-space: nowrap; }
+main > section.border-y > div > span + span { border-left: 1px solid rgba(255,255,255,.18); padding-left: 3rem; }
+@media (max-width: 640px) { main > section.border-y > div > span + span { border-left: 0; padding-left: 0; } }
+
+/* Evita el menú blanco del selector nativo en el panel. */
+select { color-scheme: dark; }
+select option { background: #15161c; color: #ffffff; }
 .font-display { font-family: 'Playfair Display', Georgia, serif; }
 .font-tech { font-family: 'DM Mono', monospace; }
+.font-knock {
+  font-family: 'Knock Knock', 'DM Sans', sans-serif;
+  font-style: normal !important;
+  font-weight: 400 !important;
+  letter-spacing: .025em !important;
+  line-height: 1 !important;
+}
+
+/* La marca puede usar Knock Knock sin heredarse de pesos/cursivas agresivos. */
+header img[src="/brand/bunniecreep-rabbit-logo.png"] + span {
+  font-family: 'Knock Knock', 'DM Sans', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: .02em;
+}
 ::selection { background: #e9a38b; color: #202225; }
 ::-webkit-scrollbar { width: 8px; }
 ::-webkit-scrollbar-track { background: #f7f3ec; }

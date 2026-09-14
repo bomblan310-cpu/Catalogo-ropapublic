@@ -19,17 +19,24 @@ export async function POST(request: Request) {
   try {
     await verifyAuth();
 
-    const { nombre, descripcion, precio, imagen, talla, stock, inventarioTalles } = await request.json();
+    const { nombre, categoria = 'Remeras', descripcion, precio, imagen, talla, stock, inventarioTalles, destacado = false } = await request.json();
+
+    if (destacado) {
+      const destacados = await prisma.producto.count({ where: { destacado: true } });
+      if (destacados >= 4) return Response.json({ error: 'Solo podés tener 4 productos destacados. Quitá uno antes de agregar otro.' }, { status: 400 });
+    }
 
     const producto = await prisma.producto.create({
       data: {
         nombre,
+        categoria,
         descripcion,
         precio: parseFloat(precio),
         imagen,
         talla,
         stock: parseInt(stock),
         inventarioTalles: inventarioTalles || '{}',
+        destacado: Boolean(destacado),
       },
     });
 

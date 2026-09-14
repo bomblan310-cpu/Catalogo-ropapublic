@@ -1,21 +1,12 @@
-import type { Metadata } from "next";
-import "./globals.css";
+import type { Metadata } from 'next';
+import './globals.css';
+import { CartProvider } from '@/components/CartProvider';
 
 export const metadata: Metadata = {
-  title: "Catálogo Ropa - E-commerce",
-  description: "Tu tienda online de ropa con productos de calidad",
+  title: 'BUNNIECREEP | Catálogo',
+  description: 'Tienda online BUNNIECREEP',
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
-  return (
-    <html lang="es">
-      <body className="antialiased">
-        {children}
-      </body>
-    </html>
-  );
+export default function RootLayout({ children }: { children: React.ReactNode }) {
+  return <html lang="es"><body className="antialiased"><CartProvider>{children}</CartProvider></body></html>;
 }
